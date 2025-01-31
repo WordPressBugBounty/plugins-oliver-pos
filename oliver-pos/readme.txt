@@ -2,8 +2,10 @@
 Contributors: oliverpos
 Tags: Point of sale, POS, WooCommerce Point of Sale, WooCommerce POS, POS Plugin
 Requires at least: 5.9
-Tested up to: 6.4.3
+Tested up to: 6.7.0
 Requires PHP: 7.4
+WC requires at least: 3.8
+WC tested up to: 9.6.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0
@@ -218,6 +220,9 @@ Yes!
 As long as you have a barcode scanner and your products have a valid barcode reference in your WooCommerce shop, we can add products using their barcode. 
 
 == Changelog ==
+= 2.4.2.3 - 2025-01-31
+* Tweak – Disabled logs
+
 = 2.4.2.2 - 2024-03-21
 * Tweak – Fixed tax api issues
 

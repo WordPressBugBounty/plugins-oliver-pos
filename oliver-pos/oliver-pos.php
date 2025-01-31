@@ -2,13 +2,14 @@
 /**
  * Plugin Name:       		Oliver POS - A WooCommerce Point of Sale (POS)
  * Description:       		Oliver POS is a WooCommerce Point of Sale (POS) integrated into your shop. Always insync with your e-commerce shop, Oliver POS lets you sell in-store.
- * Version:           		2.4.2.2
+ * Version:           		2.4.2.3
  * Author:            		Oliver POS
  * Author URI:        		https://oliverpos.com/
  * License:           		GPL-2.0+
  * License URI:       		http://www.gnu.org/licenses/gpl-2.0.txt
+ * Tested up to: 6.7.0
  * WC requires at least:	3.8
- * WC tested up to:			8.6.1
+ * WC tested up to:			9.6.0
  * Text Domain: 			oliver-pos
  * Domain Path: 			/languages/
  */
@@ -137,22 +138,7 @@ function oliver_pos_send_order_email($order_id, $email_check) {
 
 // manage log's file
 function oliver_log($msg) {
-    if(is_dir(plugin_dir_path( __FILE__  ))) {
-        if (is_writable(plugin_dir_path( __FILE__  ))) {
-            $date = date('Ymd');
-
-            $directory = plugin_dir_path(__FILE__) . 'log';
-
-            if (!file_exists($directory)) {
-                if ( ! mkdir ( $directory , 0777 , true ) && ! is_dir ( $directory ) ) {
-                    throw new \RuntimeException( sprintf ( 'Directory "%s" was not created' , $directory ) );
-                }
-            }
-            $file = fopen($directory . '/log_'. $date .'.txt', 'a+');
-            fwrite($file, date('H:i:s').' - ' . $msg . "\n");
-            fclose($file);
-        }
-    }
+  // disabled logs for now.
 }
 
 // get log file content
