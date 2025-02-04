@@ -220,6 +220,9 @@ Yes!
 As long as you have a barcode scanner and your products have a valid barcode reference in your WooCommerce shop, we can add products using their barcode. 
 
 == Changelog ==
+= 2.4.2.4 - 2025-02-04
+* Tweak – Delete previous logs
+
 = 2.4.2.3 - 2025-01-31
 * Tweak – Disabled logs
 

@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       		Oliver POS - A WooCommerce Point of Sale (POS)
  * Description:       		Oliver POS is a WooCommerce Point of Sale (POS) integrated into your shop. Always insync with your e-commerce shop, Oliver POS lets you sell in-store.
- * Version:           		2.4.2.3
+ * Version:           		2.4.2.4
  * Author:            		Oliver POS
  * Author URI:        		https://oliverpos.com/
  * License:           		GPL-2.0+
@@ -161,6 +161,36 @@ function oliver_pos_get_log_file($request_data) {
 
     return ['message' => 'invalid Request.', 'status' => -1];
 }
+
+
+function oliver_pos_delete_logs() {
+    $log_dir = plugin_dir_path(__FILE__) . 'log';
+
+    if (is_dir($log_dir)) {
+        // Remove all files in the directory
+        $files = glob($log_dir . '/*');
+        foreach ($files as $file) {
+            if (is_file($file)) {
+                unlink($file);
+            }
+        }
+        // Remove the log directory
+        rmdir($log_dir);
+    }
+}
+
+register_activation_hook(__FILE__, 'oliver_pos_delete_logs');
+
+//delete log file on plugin version update
+add_action('upgrader_process_complete', function ($upgrader_object, $options) {
+    if ($options['action'] === 'update' && $options['type'] === 'plugin') {
+        $plugins = $options['plugins'];
+        if (in_array(plugin_basename(__FILE__), $plugins)) {
+            oliver_pos_delete_logs();
+        }
+    }
+}, 10, 2);
+
 
 if (!function_exists('oliver_pos_admin_notices')) {
     function oliver_pos_admin_notices() {
