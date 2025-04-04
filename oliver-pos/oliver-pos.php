@@ -2,14 +2,14 @@
 /**
  * Plugin Name:       		Oliver POS - A WooCommerce Point of Sale (POS)
  * Description:       		Oliver POS is a WooCommerce Point of Sale (POS) integrated into your shop. Always insync with your e-commerce shop, Oliver POS lets you sell in-store.
- * Version:           		2.4.2.5
+ * Version:           		2.4.2.6
  * Author:            		Oliver POS
  * Author URI:        		https://oliverpos.com/
  * License:           		GPL-2.0+
  * License URI:       		http://www.gnu.org/licenses/gpl-2.0.txt
  * Tested up to: 6.7.0
  * WC requires at least:	3.8
- * WC tested up to:			9.6.0
+ * WC tested up to:			9.7.1
  * Text Domain: 			oliver-pos
  * Domain Path: 			/languages/
  */
